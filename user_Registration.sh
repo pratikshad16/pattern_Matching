@@ -4,7 +4,7 @@ echo "Welcome to User Registration problem"
 namePatt="^[A-Z]{1}[a-z]{3,}$"
 emailPatt="^[0-9a-zA-Z]+([+_.-][0-9a-zA-Z]+)*@[a-zA-Z0-9]+([.][a-zA-Z]{2,3}){1,2}$"
 function validate () {
-if [[ ${1} =~ $2 ]]
+if [[ $1 =~ $2 ]]
 then
 	echo "Valid"
 else
@@ -34,4 +34,13 @@ then
 	echo "valid"
 else
 	echo "Invalid mobile number"
+fi
+echo "Enter the password:"
+read password
+passPatt="^[a-zA-Z]{8,}$"
+if [[ $password =~ $passPatt ]]
+then
+	echo "valid"
+else
+	echo "Invalid password"
 fi
