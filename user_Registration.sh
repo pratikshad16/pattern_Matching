@@ -37,8 +37,8 @@ else
 fi
 echo "Enter the password:"
 read password
-passPatt="^[a-zA-Z]{8,}$"
-if [[ $password =~ $passPatt ]] && [[ $password ==  *[[:upper:]]* ]]
+passPatt="^[a-zA-Z0-9]{8,}$"
+if [[ $password =~ $passPatt ]] && [[ $password ==  *[[:upper:]]* ]] && [[ $password == *[[:digit:]]* ]]
 then
 	echo "valid"
 else
