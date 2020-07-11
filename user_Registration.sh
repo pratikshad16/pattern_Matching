@@ -37,10 +37,10 @@ else
 fi
 echo "Enter the password:"
 read password
-passPatt="^[a-zA-Z0-9]{8,}$"
-if [[ $password =~ $passPatt ]] && [[ $password ==  *[[:upper:]]* ]] && [[ $password == *[[:digit:]]* ]]
+passPatt="^[a-zA-Z0-9]*[!@#$%^&*.]{1}[A-Za-z0-9]*$"
+if [[ ${#password} -ge 8 ]] && [[ $password ==  *[A-Z]* ]] && [[ $password == *[a-zA-Z]* ]] && [[ $password ==  *[0-9]* ]] && [[ $password =~ $passPatt ]]
 then
-	echo "valid"
+	echo "valid password"
 else
-	echo "Invalid password"
+	echo "Invalid password: enter with 1 uppercase 1 numeric value 1 special chracters and minimum 8 char"
 fi
